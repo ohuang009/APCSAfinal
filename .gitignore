@@ -1,0 +1,23 @@
+# Compiled Java class files
+*.class
+
+# BlueJ / DrJava project files
+*.bjp
+*.ctxt
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
