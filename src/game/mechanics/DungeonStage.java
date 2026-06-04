@@ -8,24 +8,24 @@ import java.util.Scanner;
 
 public class DungeonStage {
 
-    private int             stageNumber;
-    private String          stageName;
-    private String          stageDescription;
-    private Boss            boss;
+    private int stageNumber;
+    private String stageName;
+    private String stageDescription;
+    private Boss boss;
     private ArrayList<Item> stageRewards;
-    private boolean         completed;
-    private int             requiredPlayerLevel;
+    private boolean completed;
+    private int requiredPlayerLevel;
 
     public DungeonStage(int stageNumber, String stageName,
                         String stageDescription, Boss boss,
                         int requiredPlayerLevel) {
-        this.stageNumber         = stageNumber;
-        this.stageName           = stageName;
-        this.stageDescription    = stageDescription;
-        this.boss                = boss;
+        this.stageNumber = stageNumber;
+        this.stageName = stageName;
+        this.stageDescription = stageDescription;
+        this.boss = boss;
         this.requiredPlayerLevel = requiredPlayerLevel;
-        this.stageRewards        = new ArrayList<>();
-        this.completed           = false;
+        this.stageRewards = new ArrayList<>();
+        this.completed = false;
     }
 
     public boolean run(Player player, Scanner scanner) {
@@ -46,7 +46,7 @@ public class DungeonStage {
         System.out.println();
 
         Battle bossBattle = new Battle(player, boss, scanner);
-        boolean victory   = bossBattle.start();
+        boolean victory = bossBattle.start();
 
         if (victory) {
             completed = true;
@@ -68,10 +68,10 @@ public class DungeonStage {
 
     public void addReward(Item item) { stageRewards.add(item); }
 
-    public int             getStageNumber()         { return stageNumber; }
-    public String          getStageName()           { return stageName; }
-    public Boss            getBoss()                { return boss; }
-    public boolean         isCompleted()            { return completed; }
-    public int             getRequiredPlayerLevel() { return requiredPlayerLevel; }
-    public ArrayList<Item> getStageRewards()        { return stageRewards; }
+    public int getStageNumber() { return stageNumber; }
+    public String getStageName() { return stageName; }
+    public Boss getBoss() { return boss; }
+    public boolean isCompleted() { return completed; }
+    public int getRequiredPlayerLevel() { return requiredPlayerLevel; }
+    public ArrayList<Item> getStageRewards() { return stageRewards; }
 }

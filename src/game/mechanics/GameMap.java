@@ -7,11 +7,11 @@ import java.util.Random;
 public class GameMap {
 
     private ArrayList<Location> locations;
-    private String              currentLocationName;
-    private Player              player;
+    private String currentLocationName;
+    private Player player;
 
     public GameMap(Player player) {
-        this.player    = player;
+        this.player = player;
         this.locations = new ArrayList<>();
         initializeMap();
     }
@@ -153,13 +153,13 @@ public class GameMap {
         }
     }
 
-    public Location            getCurrentLocation()     { return getLocation(currentLocationName); }
-    public String              getCurrentLocationName() { return currentLocationName; }
-    public Location            getLocation(String name) {
+    public Location getCurrentLocation() { return getLocation(currentLocationName); }
+    public String getCurrentLocationName() { return currentLocationName; }
+    public Location getLocation(String name) {
         for (Location loc : locations) {
             if (loc.getName().equals(name)) return loc;
         }
         return null;
     }
-    public ArrayList<Location> getAllLocations()        { return locations; }
+    public ArrayList<Location> getAllLocations() { return locations; }
 }

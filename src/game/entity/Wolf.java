@@ -13,11 +13,11 @@ public class Wolf extends Enemy {
         super("Wolf",
               45 + levelScale * 8,
               10 + levelScale * 3,
-              4  + levelScale,
+              4 + levelScale,
               3, 15, levelScale,
               50 + levelScale * 17,
               1,
-              5  + levelScale,
+              5 + levelScale,
               0.20,
               "lunges and bites");
     }

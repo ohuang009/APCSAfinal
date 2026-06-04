@@ -3,13 +3,13 @@ package game.item;
 public class Material extends Item {
 
     private String materialType;
-    private int    quantity;
+    private int quantity;
 
     public Material(String name, String description, int value,
                     String rarity, String materialType) {
         super(name, description, value, rarity, "Material");
         this.materialType = materialType;
-        this.quantity     = 1;
+        this.quantity = 1;
     }
 
     public Material(String name, String description, int value,
@@ -24,9 +24,9 @@ public class Material extends Item {
                 rarity, name, materialType, quantity, value);
     }
 
-    public void addQuantity(int amount)  { quantity += amount; }
-    public void setQuantity(int amount)  { quantity = Math.max(0, amount); }
+    public void addQuantity(int amount) { quantity += amount; }
+    public void setQuantity(int amount) { quantity = Math.max(0, amount); }
 
     public String getMaterialType() { return materialType; }
-    public int    getQuantity()     { return quantity; }
+    public int getQuantity() { return quantity; }
 }

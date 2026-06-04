@@ -2,20 +2,19 @@ package game.mechanics;
 
 import game.entity.Player;
 import game.item.Item;
-
 import java.util.ArrayList;
 
 public class Shop {
 
-    private String          shopName;
+    private String shopName;
     private ArrayList<Item> stock;
-    private double          buyMarkup;
-    private double          sellMarkdown;
+    private double buyMarkup;
+    private double sellMarkdown;
 
     public Shop(String shopName) {
-        this.shopName     = shopName;
-        this.stock        = new ArrayList<>();
-        this.buyMarkup    = 1.2;
+        this.shopName = shopName;
+        this.stock = new ArrayList<>();
+        this.buyMarkup = 1.2;
         this.sellMarkdown = 0.5;
     }
 
@@ -29,8 +28,8 @@ public class Shop {
             return;
         }
         for (int i = 0; i < stock.size(); i++) {
-            Item item  = stock.get(i);
-            int  price = getBuyPrice(item);
+            Item item = stock.get(i);
+            int price = getBuyPrice(item);
             System.out.println("  " + (i + 1) + ". " + item.getDisplayInfo()
                     + "  |  Buy: " + price + " coins");
         }
@@ -79,8 +78,8 @@ public class Shop {
         return null;
     }
 
-    public String          getShopName()             { return shopName; }
-    public ArrayList<Item> getStock()                 { return stock; }
-    public void            setBuyMarkup(double m)     { this.buyMarkup = m; }
-    public void            setSellMarkdown(double m)  { this.sellMarkdown = m; }
+    public String getShopName() { return shopName; }
+    public ArrayList<Item> getStock() { return stock; }
+    public void setBuyMarkup(double m) { this.buyMarkup = m; }
+    public void setSellMarkdown(double m) { this.sellMarkdown = m; }
 }

@@ -6,21 +6,21 @@ import java.util.ArrayList;
 
 public class Recipe {
 
-    private String            recipeName;
-    private Item              result;
-    private ArrayList<String>  ingredientNames;
+    private String recipeName;
+    private Item result;
+    private ArrayList<String> ingredientNames;
     private ArrayList<Integer> ingredientQuantities;
-    private int               craftingLevel;
-    private String            description;
+    private int craftingLevel;
+    private String description;
 
     public Recipe(String recipeName, Item result,
                   int craftingLevel, String description) {
-        this.recipeName            = recipeName;
-        this.result                = result;
-        this.craftingLevel         = craftingLevel;
-        this.description           = description;
-        this.ingredientNames       = new ArrayList<>();
-        this.ingredientQuantities  = new ArrayList<>();
+        this.recipeName = recipeName;
+        this.result = result;
+        this.craftingLevel = craftingLevel;
+        this.description = description;
+        this.ingredientNames = new ArrayList<>();
+        this.ingredientQuantities = new ArrayList<>();
     }
 
     public void addIngredient(String itemName, int quantity) {
@@ -61,10 +61,10 @@ public class Recipe {
         System.out.println("  Description : " + description);
     }
 
-    public String             getRecipeName()           { return recipeName; }
-    public Item               getResult()               { return result; }
-    public ArrayList<String>  getIngredientNames()      { return ingredientNames; }
+    public String getRecipeName() { return recipeName; }
+    public Item getResult() { return result; }
+    public ArrayList<String> getIngredientNames() { return ingredientNames; }
     public ArrayList<Integer> getIngredientQuantities() { return ingredientQuantities; }
-    public int                getCraftingLevel()         { return craftingLevel; }
-    public String             getDescription()           { return description; }
+    public int getCraftingLevel() { return craftingLevel; }
+    public String getDescription() { return description; }
 }

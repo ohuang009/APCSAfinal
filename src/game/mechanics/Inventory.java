@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class Inventory {
 
     private ArrayList<Item> items;
-    private int        maxCapacity;
+    private int maxCapacity;
 
     public Inventory() {
         this(30);
     }
 
     public Inventory(int maxCapacity) {
-        this.items       = new ArrayList<>();
+        this.items = new ArrayList<>();
         this.maxCapacity = maxCapacity;
     }
 
@@ -69,9 +69,9 @@ public class Inventory {
         }
     }
 
-    public ArrayList<Item> getItems()       { return items; }
-    public int        getSize()        { return items.size(); }
-    public int        getMaxCapacity() { return maxCapacity; }
-    public boolean    isFull()         { return items.size() >= maxCapacity; }
-    public boolean    isEmpty()        { return items.isEmpty(); }
+    public ArrayList<Item> getItems() { return items; }
+    public int getSize() { return items.size(); }
+    public int getMaxCapacity() { return maxCapacity; }
+    public boolean isFull() { return items.size() >= maxCapacity; }
+    public boolean isEmpty() { return items.isEmpty(); }
 }

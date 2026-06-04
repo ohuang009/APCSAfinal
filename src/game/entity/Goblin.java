@@ -12,12 +12,12 @@ public class Goblin extends Enemy {
     public Goblin(int levelScale) {
         super("Goblin",
               30 + levelScale * 5,
-              6  + levelScale * 2,
-              3  + levelScale,
+              6 + levelScale * 2,
+              3 + levelScale,
               5, 12, levelScale,
               30 + levelScale * 14,
-              2  + levelScale,
-              8  + levelScale * 2,
+              2 + levelScale,
+              8 + levelScale * 2,
               0.30,
               "stabs with a rusty dagger");
     }

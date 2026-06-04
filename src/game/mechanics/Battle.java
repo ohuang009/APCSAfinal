@@ -10,17 +10,17 @@ import java.util.Scanner;
 
 public class Battle {
 
-    private Player  player;
-    private Enemy   enemy;
+    private Player player;
+    private Enemy enemy;
     private Scanner scanner;
-    private int     turnCount;
+    private int turnCount;
     private boolean playerFled;
 
     public Battle(Player player, Enemy enemy, Scanner scanner) {
-        this.player     = player;
-        this.enemy      = enemy;
-        this.scanner    = scanner;
-        this.turnCount  = 0;
+        this.player = player;
+        this.enemy = enemy;
+        this.scanner = scanner;
+        this.turnCount = 0;
         this.playerFled = false;
     }
 
@@ -67,8 +67,8 @@ public class Battle {
 
         switch (choice) {
             case "1":
-                int raw    = player.getTotalAttack();
-                int dealt  = enemy.takeDamage(raw);
+                int raw = player.getTotalAttack();
+                int dealt = enemy.takeDamage(raw);
                 System.out.println("You attack " + enemy.getName()
                         + " for " + dealt + " damage!");
                 break;
@@ -93,8 +93,8 @@ public class Battle {
             ((game.entity.AncientGolem) enemy).setBattleContext(player);
         }
 
-        int baseDmg   = enemy.performAttack();
-        int curseDmg  = (enemy instanceof game.entity.DemonLord)
+        int baseDmg = enemy.performAttack();
+        int curseDmg = (enemy instanceof game.entity.DemonLord)
                         ? ((game.entity.DemonLord) enemy).getCurseDamage() : 0;
 
         int totalDealt = player.takeDamage(baseDmg + curseDmg);
@@ -142,9 +142,9 @@ public class Battle {
         }
 
         if (player.isAlive()) {
-            int  xp    = enemy.getXPReward();
-            int  coins = enemy.rollCoinDrop();
-            Item drop  = enemy.rollItemDrop();
+            int xp = enemy.getXPReward();
+            int coins = enemy.rollCoinDrop();
+            Item drop = enemy.rollItemDrop();
 
             System.out.println("\n=== VICTORY! ===");
             System.out.println("  Defeated: " + enemy.getName());
@@ -166,6 +166,6 @@ public class Battle {
         }
     }
 
-    public int     getTurnCount()   { return turnCount; }
-    public boolean didPlayerFlee()  { return playerFled; }
+    public int getTurnCount() { return turnCount; }
+    public boolean didPlayerFlee() { return playerFled; }
 }

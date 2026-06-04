@@ -9,20 +9,20 @@ public class Enchantment {
 
     private String enchantName;
     private String enchantType;
-    private int    bonusPerLevel;
-    private int    cost;
-    private int    maxEnchantLevel;
+    private int bonusPerLevel;
+    private int cost;
+    private int maxEnchantLevel;
     private String description;
 
     public Enchantment(String enchantName, String enchantType,
                        int bonusPerLevel, int cost,
                        int maxEnchantLevel, String description) {
-        this.enchantName    = enchantName;
-        this.enchantType    = enchantType;
-        this.bonusPerLevel  = bonusPerLevel;
-        this.cost           = cost;
+        this.enchantName = enchantName;
+        this.enchantType = enchantType;
+        this.bonusPerLevel = bonusPerLevel;
+        this.cost = cost;
         this.maxEnchantLevel = maxEnchantLevel;
-        this.description    = description;
+        this.description = description;
     }
 
     public boolean enchantWeapon(Player player, Weapon weapon) {
@@ -79,10 +79,10 @@ public class Enchantment {
         return new Random().nextDouble() < Math.min(chance, 0.95);
     }
 
-    public String getEnchantName()    { return enchantName; }
-    public String getEnchantType()    { return enchantType; }
-    public int    getBonusPerLevel()  { return bonusPerLevel; }
-    public int    getCost()           { return cost; }
-    public int    getMaxEnchantLevel(){ return maxEnchantLevel; }
-    public String getDescription()    { return description; }
+    public String getEnchantName() { return enchantName; }
+    public String getEnchantType() { return enchantType; }
+    public int getBonusPerLevel() { return bonusPerLevel; }
+    public int getCost() { return cost; }
+    public int getMaxEnchantLevel() { return maxEnchantLevel; }
+    public String getDescription() { return description; }
 }

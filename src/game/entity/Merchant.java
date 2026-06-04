@@ -13,8 +13,8 @@ public class Merchant extends NPC {
     public Merchant(String name, String merchantType, Shop shop) {
         super(name, "Merchant", "Welcome, traveler! Browse my wares.", 50, 5, 5, 10, 8, 1);
         this.merchantType = merchantType;
-        this.shop         = shop;
-        this.greetings    = new ArrayList<>();
+        this.shop = shop;
+        this.greetings = new ArrayList<>();
         greetings.add("Welcome to my shop, adventurer!");
         greetings.add("Finest goods in all the land!");
         greetings.add("Looking to buy or sell today?");
@@ -35,6 +35,6 @@ public class Merchant extends NPC {
 
     public void addGreeting(String greeting) { greetings.add(greeting); }
 
-    public Shop   getShop()         { return shop; }
+    public Shop getShop() { return shop; }
     public String getMerchantType() { return merchantType; }
 }

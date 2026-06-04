@@ -9,7 +9,7 @@ public abstract class NPC extends Entity {
                int maxHealth, int attack, int defense,
                int intelligence, int speed, int level) {
         super(name, maxHealth, attack, defense, intelligence, speed, level);
-        this.npcType  = npcType;
+        this.npcType = npcType;
         this.dialogue = dialogue;
     }
 
@@ -19,7 +19,7 @@ public abstract class NPC extends Entity {
 
     @Override
     public int takeDamage(int incomingDamage) {
-        int damage    = Math.max(1, incomingDamage - defense);
+        int damage = Math.max(1, incomingDamage - defense);
         currentHealth = Math.max(0, currentHealth - damage);
         return damage;
     }

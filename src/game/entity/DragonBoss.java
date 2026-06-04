@@ -18,7 +18,7 @@ public class DragonBoss extends Boss {
     public void enterNextPhase() {
         if (phase < maxPhases) {
             phase++;
-            attack  += 12;
+            attack += 12;
             defense += 5;
             System.out.println("\n" + phaseDialogue[phase - 1]);
             System.out.println(">> Ignarath enters Phase " + phase

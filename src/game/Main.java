@@ -11,12 +11,12 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    private static Player                  player;
-    private static GameMap                 gameMap;
-    private static Shop                    mainShop;
-    private static ArrayList<Recipe>       knownRecipes;
+    private static Player player;
+    private static GameMap gameMap;
+    private static Shop mainShop;
+    private static ArrayList<Recipe> knownRecipes;
     private static ArrayList<DungeonStage> dungeonStages;
-    private static ArrayList<Enchantment>  enchantments;
+    private static ArrayList<Enchantment> enchantments;
 
     public static void main(String[] args) {
         printBanner();
@@ -55,14 +55,14 @@ public class Main {
 
     private static Shop buildMainShop() {
         Shop shop = new Shop("Hearthstone General Store");
-        shop.addItem(new Weapon("Iron Sword",   "A sturdy iron blade.",         50,  "Common",   "Sword",      8, 0));
-        shop.addItem(new Weapon("Oak Staff",    "Channels magical energy.",      60,  "Common",   "Staff",      4, 6));
-        shop.addItem(new Weapon("Hunter's Bow", "A reliable short bow.",         70,  "Common",   "Bow",        7, 0));
-        shop.addItem(new Armor ("Leather Armor","Basic chest protection.",       40,  "Common",   "Chestplate", 5, 10));
-        shop.addItem(new Armor ("Iron Shield",  "Deflects incoming blows.",      55,  "Common",   "Shield",     8, 0));
-        shop.addItem(new Consumable("Health Potion","Restores 40 HP.",           20,  "Common",   40, 0, 0, 0, 0));
-        shop.addItem(new Consumable("Mana Potion",  "Restores 30 MP.",           25,  "Common",   0, 30, 0, 0, 0));
-        shop.addItem(new Consumable("Strength Brew","ATK +5 for 3 turns.",       35,  "Uncommon", 0, 0, 5, 0, 3));
+        shop.addItem(new Weapon("Iron Sword", "A sturdy iron blade.", 50, "Common", "Sword", 8, 0));
+        shop.addItem(new Weapon("Oak Staff", "Channels magical energy.", 60, "Common", "Staff", 4, 6));
+        shop.addItem(new Weapon("Hunter's Bow", "A reliable short bow.", 70, "Common", "Bow", 7, 0));
+        shop.addItem(new Armor("Leather Armor", "Basic chest protection.", 40, "Common", "Chestplate", 5, 10));
+        shop.addItem(new Armor("Iron Shield", "Deflects incoming blows.", 55, "Common", "Shield", 8, 0));
+        shop.addItem(new Consumable("Health Potion", "Restores 40 HP.", 20, "Common", 40, 0, 0, 0, 0));
+        shop.addItem(new Consumable("Mana Potion", "Restores 30 MP.", 25, "Common", 0, 30, 0, 0, 0));
+        shop.addItem(new Consumable("Strength Brew", "ATK +5 for 3 turns.", 35, "Uncommon", 0, 0, 5, 0, 3));
         return shop;
     }
 
@@ -122,11 +122,11 @@ public class Main {
 
     private static ArrayList<Enchantment> buildEnchantments() {
         ArrayList<Enchantment> list = new ArrayList<>();
-        list.add(new Enchantment("Sharpening",  "attack",      3, 50,  5,
+        list.add(new Enchantment("Sharpening", "attack", 3, 50, 5,
                 "Hones the weapon's edge for increased attack."));
-        list.add(new Enchantment("Fortification","defense",    3, 50,  5,
+        list.add(new Enchantment("Fortification", "defense", 3, 50, 5,
                 "Reinforces the armour's structure for increased defence."));
-        list.add(new Enchantment("Arcane Infusion","intelligence", 4, 80, 5,
+        list.add(new Enchantment("Arcane Infusion", "intelligence", 4, 80, 5,
                 "Imbues the item with arcane energy."));
         return list;
     }
@@ -146,24 +146,60 @@ public class Main {
 
     private static void handleCommand(String command) {
         switch (command) {
-            case "hunt":      handleHunt();      break;
-            case "adventure": handleAdventure(); break;
-            case "shop":      handleShop();      break;
-            case "buy":       handleBuy();       break;
-            case "sell":      handleSell();      break;
-            case "dungeon":   handleDungeon();   break;
-            case "inventory": handleInventory(); break;
-            case "profile":   handleProfile();   break;
-            case "chop":      handleChop();      break;
-            case "fish":      handleFish();      break;
-            case "craft":     handleCraft();     break;
-            case "recipes":   handleRecipes();   break;
-            case "enchant":   handleEnchant();   break;
-            case "map":       gameMap.displayMap(); break;
-            case "travel":    handleTravel();    break;
-            case "help":      printHelp();       break;
-            case "equip":      handleEquip();      break;
-            case "debug_golem": handleDebugGolem(); break;
+            case "hunt":
+                handleHunt();
+                break;
+            case "adventure":
+                handleAdventure();
+                break;
+            case "shop":
+                handleShop();
+                break;
+            case "buy":
+                handleBuy();
+                break;
+            case "sell":
+                handleSell();
+                break;
+            case "dungeon":
+                handleDungeon();
+                break;
+            case "inventory":
+                handleInventory();
+                break;
+            case "profile":
+                handleProfile();
+                break;
+            case "chop":
+                handleChop();
+                break;
+            case "fish":
+                handleFish();
+                break;
+            case "craft":
+                handleCraft();
+                break;
+            case "recipes":
+                handleRecipes();
+                break;
+            case "enchant":
+                handleEnchant();
+                break;
+            case "map":
+                gameMap.displayMap();
+                break;
+            case "travel":
+                handleTravel();
+                break;
+            case "help":
+                printHelp();
+                break;
+            case "equip":
+                handleEquip();
+                break;
+            case "debug_golem":
+                handleDebugGolem();
+                break;
             default:
                 System.out.println("Unknown command. Type 'help' for options.");
         }
@@ -397,11 +433,16 @@ public class Main {
 
     private static Enemy spawnEnemy(String type, int levelScale) {
         switch (type) {
-            case "Wolf":     return new Wolf(levelScale);
-            case "Bandit":   return new Bandit(levelScale);
-            case "Skeleton": return new Skeleton(levelScale);
-            case "Troll":    return new Troll(levelScale);
-            default:         return new Goblin(levelScale);
+            case "Wolf":
+                return new Wolf(levelScale);
+            case "Bandit":
+                return new Bandit(levelScale);
+            case "Skeleton":
+                return new Skeleton(levelScale);
+            case "Troll":
+                return new Troll(levelScale);
+            default:
+                return new Goblin(levelScale);
         }
     }
 

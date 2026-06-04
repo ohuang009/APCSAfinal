@@ -6,25 +6,25 @@ import game.mechanics.Inventory;
 
 public abstract class Player extends Entity {
 
-    protected int    xp;
-    protected int    xpToNextLevel;
-    protected int    coins;
+    protected int xp;
+    protected int xpToNextLevel;
+    protected int coins;
     protected Inventory inventory;
     protected Weapon equippedWeapon;
-    protected Armor  equippedArmor;
-    protected int    dungeonStage;
+    protected Armor equippedArmor;
+    protected int dungeonStage;
     protected String playerClass;
 
     public Player(String name, String playerClass,
                   int maxHealth, int attack, int defense,
                   int intelligence, int speed, int coins) {
         super(name, maxHealth, attack, defense, intelligence, speed, 1);
-        this.playerClass    = playerClass;
-        this.xp             = 0;
-        this.xpToNextLevel  = 100;
-        this.coins          = coins;
-        this.inventory      = new Inventory();
-        this.dungeonStage   = 0;
+        this.playerClass = playerClass;
+        this.xp = 0;
+        this.xpToNextLevel = 100;
+        this.coins = coins;
+        this.inventory = new Inventory();
+        this.dungeonStage = 0;
     }
 
     public abstract void levelUp();
@@ -34,8 +34,8 @@ public abstract class Player extends Entity {
     @Override
     public int takeDamage(int incomingDamage) {
         int armorBonus = (equippedArmor != null) ? equippedArmor.getDefenseBonus() : 0;
-        int damage     = Math.max(1, incomingDamage - (defense + armorBonus));
-        currentHealth  = Math.max(0, currentHealth - damage);
+        int damage = Math.max(1, incomingDamage - (defense + armorBonus));
+        currentHealth = Math.max(0, currentHealth - damage);
         return damage;
     }
 
@@ -83,13 +83,13 @@ public abstract class Player extends Entity {
         System.out.println(name + " equipped " + armor.getName() + ".");
     }
 
-    public int       getXP()             { return xp; }
-    public int       getXPToNextLevel()  { return xpToNextLevel; }
-    public int       getCoins()          { return coins; }
-    public Inventory getInventory()      { return inventory; }
-    public Weapon    getEquippedWeapon() { return equippedWeapon; }
-    public Armor     getEquippedArmor()  { return equippedArmor; }
-    public int       getDungeonStage()   { return dungeonStage; }
-    public String    getPlayerClass()    { return playerClass; }
-    public void      setDungeonStage(int stage) { this.dungeonStage = stage; }
+    public int getXP() { return xp; }
+    public int getXPToNextLevel() { return xpToNextLevel; }
+    public int getCoins() { return coins; }
+    public Inventory getInventory() { return inventory; }
+    public Weapon getEquippedWeapon() { return equippedWeapon; }
+    public Armor getEquippedArmor() { return equippedArmor; }
+    public int getDungeonStage() { return dungeonStage; }
+    public String getPlayerClass() { return playerClass; }
+    public void setDungeonStage(int stage) { this.dungeonStage = stage; }
 }

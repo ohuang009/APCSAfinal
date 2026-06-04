@@ -18,11 +18,11 @@ public abstract class Enemy extends NPC {
                  int xpReward, int minCoinDrop, int maxCoinDrop,
                  double dropChance, String attackDescription) {
         super(name, "Enemy", "...", maxHealth, attack, defense, intelligence, speed, level);
-        this.xpReward          = xpReward;
-        this.minCoinDrop       = minCoinDrop;
-        this.maxCoinDrop       = maxCoinDrop;
-        this.dropChance        = dropChance;
-        this.possibleDrops     = new ArrayList<>();
+        this.xpReward = xpReward;
+        this.minCoinDrop = minCoinDrop;
+        this.maxCoinDrop = maxCoinDrop;
+        this.dropChance = dropChance;
+        this.possibleDrops = new ArrayList<>();
         this.attackDescription = attackDescription;
     }
 
@@ -52,10 +52,10 @@ public abstract class Enemy extends NPC {
 
     public void addPossibleDrop(Item item) { possibleDrops.add(item); }
 
-    public int             getXPReward()          { return xpReward; }
-    public int             getMinCoinDrop()       { return minCoinDrop; }
-    public int             getMaxCoinDrop()       { return maxCoinDrop; }
-    public double          getDropChance()        { return dropChance; }
-    public ArrayList<Item> getPossibleDrops()     { return possibleDrops; }
-    public String          getAttackDescription() { return attackDescription; }
+    public int getXPReward() { return xpReward; }
+    public int getMinCoinDrop() { return minCoinDrop; }
+    public int getMaxCoinDrop() { return maxCoinDrop; }
+    public double getDropChance() { return dropChance; }
+    public ArrayList<Item> getPossibleDrops() { return possibleDrops; }
+    public String getAttackDescription() { return attackDescription; }
 }

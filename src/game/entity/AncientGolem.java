@@ -11,13 +11,13 @@ public class AncientGolem extends Boss {
     };
 
     private boolean shieldActive;
-    private int     shieldCooldown;
-    private Player  currentOpponent;
+    private int shieldCooldown;
+    private Player currentOpponent;
     private boolean chargeReady;
-    private int     playerAtkDebuffAmount;
-    private int     playerAtkDebuffTurns;
-    private int     playerDefDebuffAmount;
-    private int     playerDefDebuffTurns;
+    private int playerAtkDebuffAmount;
+    private int playerAtkDebuffTurns;
+    private int playerDefDebuffAmount;
+    private int playerDefDebuffTurns;
 
     public AncientGolem() {
         super("Zytheron the Ancient Golem",
@@ -25,14 +25,14 @@ public class AncientGolem extends Boss {
               1000, 200, 500,
               2,   // phases
               3);  // unlocks dungeon stage 3
-        this.shieldActive          = false;
-        this.shieldCooldown        = 0;
-        this.currentOpponent       = null;
-        this.chargeReady           = false;
+        this.shieldActive = false;
+        this.shieldCooldown = 0;
+        this.currentOpponent = null;
+        this.chargeReady = false;
         this.playerAtkDebuffAmount = 0;
-        this.playerAtkDebuffTurns  = 0;
+        this.playerAtkDebuffTurns = 0;
         this.playerDefDebuffAmount = 0;
-        this.playerDefDebuffTurns  = 0;
+        this.playerDefDebuffTurns = 0;
         phaseDialogue[0] = "The ground trembles: 'INTRUDER DETECTED. ELIMINATING.'";
         phaseDialogue[1] = "Zytheron's core cracks: 'CORE OVERLOAD. MAXIMUM FORCE ENGAGED.'";
     }
@@ -45,9 +45,9 @@ public class AncientGolem extends Boss {
     public void enterNextPhase() {
         if (phase < maxPhases) {
             phase++;
-            attack     += 25;
-            defense    -= 20;
-            maxHealth  += 200;
+            attack += 25;
+            defense -= 20;
+            maxHealth += 200;
             currentHealth += 200;
             System.out.println("\n" + phaseDialogue[phase - 1]);
             System.out.println(">> Zytheron enters Phase " + phase
@@ -134,7 +134,7 @@ public class AncientGolem extends Boss {
     }
 
     private String buildUserPrompt() {
-        int bossHPPct   = (int) ((currentHealth * 100.0) / maxHealth);
+        int bossHPPct = (int) ((currentHealth * 100.0) / maxHealth);
         int playerHPPct = (int) ((currentOpponent.getCurrentHealth() * 100.0)
                                 / currentOpponent.getMaxHealth());
 
@@ -157,13 +157,13 @@ public class AncientGolem extends Boss {
             ? "ACTIVE (-" + playerDefDebuffAmount + " DEF, " + playerDefDebuffTurns + " turns left)"
             : "none";
 
-        int dmgCannon  = (int) (attack * 1.6);
-        int dmgSlam    = (int) (attack * 1.7);
-        int dmgSweep   = (int) (attack * 1.5);
-        int dmgPrison  = attack / 2;
+        int dmgCannon = (int) (attack * 1.6);
+        int dmgSlam = (int) (attack * 1.7);
+        int dmgSweep = (int) (attack * 1.5);
+        int dmgPrison = attack / 2;
         int dmgSeismic = (int) (attack * 0.8);
-        int dmgCharge  = (int) (attack * 2.5);
-        int healShell  = (int) (maxHealth * 0.08);
+        int dmgCharge = (int) (attack * 2.5);
+        int healShell = (int) (maxHealth * 0.08);
 
         return "=== BATTLE STATE ===\n"
              + "Zytheron HP  : " + currentHealth + "/" + maxHealth

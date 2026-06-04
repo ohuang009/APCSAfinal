@@ -16,7 +16,7 @@ public class Bandit extends Enemy {
         super("Bandit",
               55 + levelScale * 10,
               12 + levelScale * 3,
-              6  + levelScale * 2,
+              6 + levelScale * 2,
               8, 11, levelScale,
               65 + levelScale * 22,
               10 + levelScale * 5,

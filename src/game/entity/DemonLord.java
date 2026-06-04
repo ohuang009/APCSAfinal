@@ -22,9 +22,9 @@ public class DemonLord extends Boss {
     public void enterNextPhase() {
         if (phase < maxPhases) {
             phase++;
-            attack       += 15;
+            attack += 15;
             intelligence += 10;
-            curseStacks   = 0;
+            curseStacks = 0;
             System.out.println("\n" + phaseDialogue[phase - 1]);
             System.out.println(">> Malachar enters Phase " + phase + "! Power intensifies!");
         }

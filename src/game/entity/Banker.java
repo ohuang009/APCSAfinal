@@ -2,12 +2,12 @@ package game.entity;
 
 public class Banker extends Player {
 
-    private static final int    BASE_HEALTH       = 80;
-    private static final int    BASE_ATTACK       = 8;
-    private static final int    BASE_DEFENSE      = 8;
-    private static final int    BASE_INTELLIGENCE = 18;
-    private static final int    BASE_SPEED        = 10;
-    private static final int    STARTING_COINS    = 250;
+    private static final int BASE_HEALTH = 80;
+    private static final int BASE_ATTACK = 8;
+    private static final int BASE_DEFENSE = 8;
+    private static final int BASE_INTELLIGENCE = 18;
+    private static final int BASE_SPEED = 10;
+    private static final int STARTING_COINS = 250;
 
     public Banker(String name) {
         super(name, "Banker",
@@ -18,12 +18,12 @@ public class Banker extends Player {
     @Override
     public void levelUp() {
         level++;
-        maxHealth     += 8;
-        currentHealth  = maxHealth;
-        attack        += 2;
-        defense       += 2;
-        intelligence  += 4;
-        xpToNextLevel  = (int) (xpToNextLevel * 1.5);
+        maxHealth += 8;
+        currentHealth = maxHealth;
+        attack += 2;
+        defense += 2;
+        intelligence += 4;
+        xpToNextLevel = (int) (xpToNextLevel * 1.5);
         System.out.println(name + " leveled up to Lv." + level + "! Wealth and wit grow sharper.");
     }
 

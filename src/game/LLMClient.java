@@ -9,7 +9,7 @@ import java.time.Duration;
 public class LLMClient {
 
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-    private static final String MODEL   = "gpt-4o-mini";
+    private static final String MODEL = "gpt-4o-mini";
 
     /**
      * Sends a prompt to the LLM and returns whichever string from validMoves
@@ -56,7 +56,7 @@ public class LLMClient {
              + "\"model\":" + jsonString(MODEL) + ","
              + "\"messages\":["
              +   "{\"role\":\"system\",\"content\":" + jsonString(systemPrompt) + "},"
-             +   "{\"role\":\"user\",\"content\":"   + jsonString(userPrompt)   + "}"
+             +   "{\"role\":\"user\",\"content\":" + jsonString(userPrompt) + "}"
              + "],"
              + "\"max_tokens\":10,"
              + "\"temperature\":0.3"

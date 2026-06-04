@@ -15,12 +15,12 @@ public class Troll extends Enemy {
     public Troll(int levelScale) {
         super("Troll",
               120 + levelScale * 20,
-              18  + levelScale * 5,
-              10  + levelScale * 3,
+              18 + levelScale * 5,
+              10 + levelScale * 3,
               3, 5, levelScale,
               120 + levelScale * 35,
-              8   + levelScale * 4,
-              20  + levelScale * 8,
+              8 + levelScale * 4,
+              20 + levelScale * 8,
               0.25,
               "smashes with a massive club");
         this.regenCooldown = 2;
